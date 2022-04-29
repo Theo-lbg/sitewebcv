@@ -1,16 +1,9 @@
 # sitewebtheo
 
-A new Flutter project.
+Créer mon cv avec Flutter.
 
-## Getting Started
+## projectflutter
 
-This project is a starting point for a Flutter application.
+email: theo.lebegue@icloud.com
+Tél : 06/47/12/27/70
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
