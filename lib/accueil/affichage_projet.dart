@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sitewebtheo/accueil/projet.dart';
 import 'package:sitewebtheo/constants.dart';
+import 'package:sitewebtheo/responsive.dart';
 
 
 class affichageprojets extends StatelessWidget {
@@ -27,7 +28,7 @@ final Projet projet;
           Text(
             projet.description!,
             style: const TextStyle(height: 1.5),
-            maxLines: 4,
+            maxLines: Responsive.isMobileLarge(context) ? 3:   4,
             overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),

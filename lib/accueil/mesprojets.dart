@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sitewebtheo/accueil/affichage_projet.dart';
 import 'package:sitewebtheo/accueil/projet.dart';
 import 'package:sitewebtheo/constants.dart';
+import 'package:sitewebtheo/responsive.dart';
 
 
 class mesprojets extends StatelessWidget {
@@ -19,22 +20,39 @@ class mesprojets extends StatelessWidget {
           style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(height: defaultPadding,),
-          GridView.builder(
+          const Responsive(
+          mobile: projetgridview(crossAxisCount: 1, childAspectRatio: 2,), 
+          tablet: projetgridview(childAspectRatio: 1.1,),
+          mobileLarge: projetgridview(crossAxisCount: 2),
+          desktop: projetgridview())
+      ],
+    );
+  }
+}
+
+class projetgridview extends StatelessWidget {
+  const projetgridview({
+    Key? key, this.crossAxisCount = 3 , this.childAspectRatio = 1.3,
+  }) : super(key: key);
+
+final int crossAxisCount;
+final double childAspectRatio;
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: liste_projet.length,
         gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: 1.3,
-            crossAxisSpacing: defaultPadding,
-            mainAxisSpacing: defaultPadding,
-          ),
+     SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: crossAxisCount,
+      childAspectRatio: childAspectRatio,
+      crossAxisSpacing: defaultPadding,
+      mainAxisSpacing: defaultPadding,
+    ),
 
-          itemBuilder: (context, index) => affichageprojets(projet: liste_projet[index],) , 
-        ),
-      ],
-    );
+    itemBuilder: (context, index) => affichageprojets(projet: liste_projet[index],) , 
+        );
   }
 }
 

@@ -26,6 +26,7 @@ class Bannierepageaccueil extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+             
                 Text("Découvrez moi ! \nDans mes projets et mon parcours !", 
                 style: 
                 Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline3!.copyWith(fontWeight: FontWeight.bold, 
