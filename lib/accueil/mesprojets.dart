@@ -21,7 +21,7 @@ class mesprojets extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding,),
           const Responsive(
-          mobile: projetgridview(crossAxisCount: 1, childAspectRatio: 2,), 
+          mobile: projetgridview(crossAxisCount: 1, childAspectRatio: 1.7,), 
           tablet: projetgridview(childAspectRatio: 1.1,),
           mobileLarge: projetgridview(crossAxisCount: 2),
           desktop: projetgridview())
