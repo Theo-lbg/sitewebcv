@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sitewebtheo/accueil/accueil_page.dart';
 import 'package:sitewebtheo/constants.dart';
 
 
 import '../constants.dart';
-import 'main/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Lebègue Théo',
 
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               bodyText2: const TextStyle(color: bodyTextColor),
             ),
       ),
-      home: const HomePage(),
+      home: const accueilpage(),
     );
   }
 }

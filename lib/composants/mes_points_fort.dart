@@ -11,13 +11,13 @@ class competences extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // ignore: prefer_const_literals_to_create_immutables
+     crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Divider(),
       
       Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-          child: Text("Compétences", style: Theme.of(context).textTheme.subtitle2,),
+          child: Text("Mes points forts", style: Theme.of(context).textTheme.subtitle2,),
         ),
 
         // ignore: prefer_const_literals_to_create_immutables
@@ -36,21 +36,10 @@ class competences extends StatelessWidget {
        const SizedBox(width: defaultPadding),
        const Expanded(
      child: CercleAnime(
-       pourcentage: 0.5, 
-       Language: "C"),
+       pourcentage: 0.6, 
+       Language: "Git"),
        ),
-       const SizedBox(width: defaultPadding),
-     const Expanded(
-     child: CercleAnime(
-       pourcentage: 0.7, 
-       Language: "Bash"),
-       ),
-     const SizedBox(width: defaultPadding),
-     // const Expanded(
-     // child: CercleAnime(
-     //   pourcentage: 0.7, 
-     //   Language: "Git"),
-     //   )
+       
        ],)
       ]);
   }

@@ -4,7 +4,9 @@ import 'package:sitewebtheo/constants.dart';
 
 
 class HomePage extends StatelessWidget{
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key, required this.enfant}) : super(key: key);
+
+  final List<Widget> enfant;
 
 @override
 Widget build(BuildContext context) {
@@ -13,15 +15,23 @@ Widget build(BuildContext context) {
       child: Container(
         constraints: const BoxConstraints(maxWidth: maxWidth),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            const Expanded(
               flex: 2,
-              child: const MenuCote()
+              child: MenuCote()
              ),
+             const SizedBox(width: defaultPadding / 2,),
             Expanded(
               flex: 7,
-              child: Container(
-              color: Colors.blue ,)
+              child: SingleChildScrollView(
+                child: 
+                Column(
+                  children: [
+                    ...enfant
+                  ]
+                  ),
+                  )
         ),
         ],
     ),
