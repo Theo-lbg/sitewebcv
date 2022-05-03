@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sitewebtheo/accueil/Text_animer.dart';
 import 'package:sitewebtheo/constants.dart';
+import 'package:sitewebtheo/responsive.dart';
 
 
 
@@ -27,9 +28,14 @@ class Bannierepageaccueil extends StatelessWidget {
             children: [
                 Text("Découvrez moi ! \nDans mes projets et mon parcours !", 
                 style: 
-                Theme.of(context).textTheme.headline3!.copyWith(fontWeight: FontWeight.bold, 
-                color: Colors.white), 
+                Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline3!.copyWith(fontWeight: FontWeight.bold, 
+                color: Colors.white) :
+                Theme.of(context).textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, 
+                color: Colors.white) ,
                 ),
+              if(Responsive.isMobileLarge(context))
+              const SizedBox(height: defaultPadding /2,),
+
                 const Textanimer()
             ],
 

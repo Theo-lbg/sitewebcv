@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sitewebtheo/composants/menu_cote.dart';
 import 'package:sitewebtheo/constants.dart';
+import 'package:sitewebtheo/responsive.dart';
 
 
 class HomePage extends StatelessWidget{
@@ -11,12 +12,25 @@ class HomePage extends StatelessWidget{
 @override
 Widget build(BuildContext context) {
   return Scaffold(
+    appBar: Responsive.isDesktop(context)
+    ? null : AppBar(
+      backgroundColor: bgColor,
+      leading: Builder(builder: (context) => IconButton(
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+        icon: const Icon(Icons.menu), 
+      ),
+      )
+    ),
+    drawer: const MenuCote(),
     body: Center (
       child: Container(
         constraints: const BoxConstraints(maxWidth: maxWidth),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            if(Responsive.isDesktop(context))
             const Expanded(
               flex: 2,
               child: MenuCote()

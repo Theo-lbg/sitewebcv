@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:sitewebtheo/accueil/text_coder_flutter.dart';
 import 'package:sitewebtheo/constants.dart';
+import 'package:sitewebtheo/responsive.dart';
 
 
 class Textanimer extends StatelessWidget {
@@ -15,7 +16,9 @@ class Textanimer extends StatelessWidget {
       style: Theme.of(context).textTheme.subtitle1!,
       child: Row(
         children: [
+          if(!Responsive.isMobileLarge(context))
           const Textcoderflutter(),
+          if(!Responsive.isMobileLarge(context))
           const SizedBox(width: defaultPadding/2,),
           AnimatedTextKit(
             animatedTexts: [ TyperAnimatedText("Mon site Web responsive et application mobile. ", speed: const Duration(milliseconds: 65)),
@@ -24,7 +27,9 @@ class Textanimer extends StatelessWidget {
               
             ],
             ),
+            if(!Responsive.isMobileLarge(context))
             const Textcoderflutter(),
+            if(!Responsive.isMobileLarge(context))
             const SizedBox(width: defaultPadding/2,),
 
         ],

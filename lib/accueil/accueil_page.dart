@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:sitewebtheo/Pages/main/HomePage.dart';
 import 'package:sitewebtheo/accueil/Text_animer.dart';
 import 'package:sitewebtheo/accueil/banniere_page.dart';
+import 'package:sitewebtheo/accueil/mesprojets.dart';
+import 'package:sitewebtheo/accueil/projet.dart';
 import 'package:sitewebtheo/constants.dart';
 
 
@@ -14,19 +16,10 @@ class accueilpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  HomePage(enfant: [
-      const Bannierepageaccueil(),
-        Text(
-          "Mes Projets: ",
-          style: Theme.of(context).textTheme.headline6,
-          ),
-          GridView.builder(
-            shrinkWrap: true,
-            itemCount: 9,
-            gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
-              itemBuilder: (context, index) => Container() , 
-            ),
+    return  const HomePage(enfant: [
+        Bannierepageaccueil(),
+         mesprojets(),
+          
     ],);
   }
 }
